@@ -1,5 +1,5 @@
 {
-  "name": "chatbot-widget",
+  "name": "@im_ahsan/chatbot-widget",
   "version": "0.0.77",
   "type": "module",
   "types": "./dist/index.d.ts",
