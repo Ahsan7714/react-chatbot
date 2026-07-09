@@ -5,14 +5,14 @@ A customizable React chatbot widget component.
 ## Installation
 
 ```bash
-npm install @im_ahsan/chatbot-widget
+npm install @muhammadahsan100d/chatbot-widget
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react';
-import { ChatBot } from '@im_ahsan/chatbot-widget';
+import { ChatBot } from '@muhammadahsan100d/chatbot-widget';
 
 function App() {
   return (

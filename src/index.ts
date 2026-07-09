@@ -1,3 +1,3 @@
 import App from './App.tsx';
 
-export {App as ChatBot}
+export {App as ChatBot};

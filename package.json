@@ -1,5 +1,5 @@
 {
-  "name": "@im_ahsan/chatbot-widget",
+  "name": "@muhammadahsan100d/chatbot-widget",
   "version": "0.0.82",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "bundle": "tsup src/index.js"
+    "bundle": "tsup src/index.ts"
   },
   "dependencies": {
     "axios": "^1.7.7",
