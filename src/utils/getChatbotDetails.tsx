@@ -6,6 +6,7 @@ const getChatbotDetails = async (token:string) => {
     const response =await axios.get(`${baseUrl}/user/token/verify`, {
         params: {
             token:token,
+            _cb: new Date().getTime(),
             },
     });
 

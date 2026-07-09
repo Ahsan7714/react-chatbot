@@ -1,6 +1,6 @@
 {
   "name": "@muhammadahsan100d/chatbot-widget",
-  "version": "0.0.85",
+  "version": "0.0.86",
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
