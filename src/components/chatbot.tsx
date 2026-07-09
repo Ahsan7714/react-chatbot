@@ -39,7 +39,6 @@ interface ChatbotProps {
 const Chatbot: React.FC<ChatbotProps> = ({
   chatbotDetails,
   theme,
-  position,
   wantToShowSuggestions=false
 }) => {
   const [session, setSession] = useState<SessionInterface>({
