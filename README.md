@@ -54,9 +54,3 @@ This library acts strictly as a UI wrapper client for your backend chatbot servi
 * **PII Collection**: When a user starts a chat, they are prompted for their name and email. This information is used solely to generate a session ID for backend context management.
 * **Data Transmission**: All submitted names, emails, and chat messages are sent exclusively to the endpoint you configure in the `apiUrl` prop. No telemetry or data is sent to third-party servers.
 * **Authentication**: All API requests are verified using the business-specific `token` prop.
-
----
-
-## License
-
-This project is licensed under the MIT License.
