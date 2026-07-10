@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 import generateSession from "../utils/generateSession";
 import axios from "axios";
-import baseUrl from "../baseUrl";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 import { IoSend } from "react-icons/io5";
@@ -34,12 +33,14 @@ interface ChatbotProps {
   theme?: string;
   position?: "left" | "right";
   wantToShowSuggestions?:boolean;
+  apiUrl: string;
 }
 
 const Chatbot: React.FC<ChatbotProps> = ({
   chatbotDetails,
   theme,
-  wantToShowSuggestions=false
+  wantToShowSuggestions=false,
+  apiUrl
 }) => {
   const [session, setSession] = useState<SessionInterface>({
     started: false,
@@ -107,7 +108,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
           }
         }
 
-        const res = await axios.post(`${baseUrl}/chatbot/getResponse`, {
+        const res = await axios.post(`${apiUrl}/chatbot/getResponse`, {
           messages: backendHistory,
           message: temp,
           session_id: session.sessionId,
@@ -172,6 +173,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
           email,
           username: name,
           chatbotId: chatbotDetails.id,
+          apiUrl,
         });
 
         setSession({
@@ -194,7 +196,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
   useEffect(() => {
     const getSugesstionsList = async () => {
       if (wantToShowSuggestions && showSuggestions) {
-        const suggestionsList = await generateSugesstions(bussinessDetails);
+        const suggestionsList = await generateSugesstions(bussinessDetails, apiUrl);
         console.log(suggestionsList);
         setSuggestions(suggestionsList);
         console.log(suggestionsList);
@@ -202,7 +204,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
     };
 
     getSugesstionsList();
-  }, [wantToShowSuggestions, showSuggestions, bussinessDetails]); 
+  }, [wantToShowSuggestions, showSuggestions, bussinessDetails, apiUrl]); 
 
 
   const handleSugesstionClick = async (sugg: string) => {

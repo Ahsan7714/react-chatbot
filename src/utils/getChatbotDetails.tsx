@@ -1,11 +1,10 @@
 import axios from "axios";
-import baseUrl from "../baseUrl";
 
-const getChatbotDetails = async (token:string) => {
+const getChatbotDetails = async (token: string, apiUrl: string) => {
   try {
-    const response =await axios.get(`${baseUrl}/user/token/verify`, {
+    const response = await axios.get(`${apiUrl}/user/token/verify`, {
         params: {
-            token:token,
+            token: token,
             _cb: new Date().getTime(),
             },
     });
@@ -17,4 +16,4 @@ const getChatbotDetails = async (token:string) => {
   }
 };
 
-export default getChatbotDetails
+export default getChatbotDetails;

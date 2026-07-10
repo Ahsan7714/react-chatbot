@@ -11,6 +11,7 @@ interface AppProps {
   toggleBtncolor?: string;
   animate?: boolean;
   token: string;
+  apiUrl: string;
   theme?: 'primary' | 'secondary' | 'professional' | 'tech' | '' | undefined;
   position?: 'left' | 'right';
   wantToShowSuggestions?: boolean;
@@ -113,6 +114,7 @@ const App: React.FC<AppProps> = ({
   toggleBtncolor = '',
   animate = true,
   token,
+  apiUrl,
   theme = 'primary',
   position = 'right',
   wantToShowSuggestions = false,
@@ -123,15 +125,17 @@ const App: React.FC<AppProps> = ({
   useEffect(() => {
     const fetchChatbotDetails = async () => {
       try {
-        const details = await getChatbotDetails(token);
+        const details = await getChatbotDetails(token, apiUrl);
         setChatbotDetails(details);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchChatbotDetails();
-  }, [token]);
+    if (apiUrl) {
+      fetchChatbotDetails();
+    }
+  }, [token, apiUrl]);
 
   if (!token) {
     console.error('Valid Token is required');
@@ -152,7 +156,7 @@ const App: React.FC<AppProps> = ({
 
       <ChatbotWrapper $show={show} $position={position}>
         {chatbotDetails ? (
-          <Chatbot chatbotDetails={chatbotDetails} theme={theme} position={position} wantToShowSuggestions={wantToShowSuggestions}/>
+          <Chatbot chatbotDetails={chatbotDetails} theme={theme} position={position} wantToShowSuggestions={wantToShowSuggestions} apiUrl={apiUrl}/>
         ) : (
           <Loader theme={theme} />
         )}

@@ -1,6 +1,6 @@
 {
-  "name": "@muhammadahsan100d/chatbot-widget",
-  "version": "0.0.86",
+  "name": "quickstart-ai-chatbot-widget",
+  "version": "1.0.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
@@ -51,7 +51,8 @@
     "vite": "^5.2.0"
   },
   "license": "MIT",
-  "description": "Chatbot React",
+  "description": "A customizable, secure AI Chatbot widget for business websites.",
+  "author": "Muhammad Ahsan",
   "keywords": [
     "chatbot",
     "react",
