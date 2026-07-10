@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <GlobalStyle />
     <App
       token="A1ED-1A711D66-26DB17E9"
+      // Added apiUrl to satisfy typescript compilation error TS2741 (required property in AppProps)
       apiUrl="http://localhost:3100/api/v1"
       theme='tech'
       wantToShowSuggestions={true}
