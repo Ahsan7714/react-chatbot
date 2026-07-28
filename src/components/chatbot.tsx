@@ -197,9 +197,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
     const getSugesstionsList = async () => {
       if (wantToShowSuggestions && showSuggestions) {
         const suggestionsList = await generateSugesstions(bussinessDetails, apiUrl);
-        console.log(suggestionsList);
         setSuggestions(suggestionsList);
-        console.log(suggestionsList);
       }
     };
 
